@@ -35,41 +35,10 @@
 </head>
 <body>
 
-    <div id="authenticated" style="display: block;">
-        <h1>انت موثق بالفعل</h1>
-        <a class="button" href="#verified">اذهب إلى صفحة التوثيق</a>
-    </div>
-
-    <div id="verified" style="display: none;">
+    <div id="verified" style="display: block;">
         <h1>تم التوثيق</h1>
-        <a class="button" href="#authenticated">اذهب إلى صفحة الموثق بالفعل</a>
+        <a class="button" href="#authenticated" style="display: none;">اذهب إلى صفحة الموثق بالفعل</a>
     </div>
-
-    <script>
-        // Simple navigation between the two sections
-        const authenticatedDiv = document.getElementById('authenticated');
-        const verifiedDiv = document.getElementById('verified');
-
-        if (window.location.hash === '#verified') {
-            authenticatedDiv.style.display = 'none';
-            verifiedDiv.style.display = 'block';
-        } else {
-            authenticatedDiv.style.display = 'block';
-            verifiedDiv.style.display = 'none';
-        }
-
-        // Update the view based on the hash change
-        window.onhashchange = function() {
-            if (window.location.hash === '#verified') {
-                authenticatedDiv.style.display = 'none';
-                verifiedDiv.style.display = 'block';
-            } else {
-                authenticatedDiv.style.display = 'block';
-                verifiedDiv.style.display = 'none';
-            }
-        };
-    </script>
 
 </body>
 </html>
-
